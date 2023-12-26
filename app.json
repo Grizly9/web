@@ -1,24 +1,11 @@
 {
-    "name": "Remini Gratis",
-    "description": "Aplikasi untuk meningkatkan kualitas foto menggunakan API Pexels",
-    "keywords": ["photo", "enhancer", "Pexels"],
-    "website": "https://xnxx.com",
-    "repository": "https://github.com/Grizly9/web",
-    "logo": "https://xnxx.com",
-    "success_url": "/welcome",
-    "scripts": {
-        "postdeploy": "bundle exec rake bootstrap"
-    },
-    "formation": {
-        "web": {
-            "quantity": 1,
-            "size": "eco"
-        }
-    },
-    "image": "heroku/ruby",
-    "buildpacks": [
-        {
-            "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
-        }
-    ]
+  "name": "my-heroku-app",
+  "description": "My awesome Heroku app",
+  "repository": "https://github.com/Grizly9/web",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
 }
