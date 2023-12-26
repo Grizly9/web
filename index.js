@@ -1,23 +1,11 @@
-var express = require('express'),
-    cors = require('cors'),
-    secure = require('ssl-express-www');
-const PORT = process.env.PORT || 8080 || 5000 || 3000
-var { color } = require('./lib/color.js')
+const express = require('express');
+const app = express();
 
-var mainrouter = require('./routes/main')
+// Mengirim file statis dari folder 'public'
+app.use(express.static('public'));
 
-var app = express()
-app.enable('trust proxy');
-app.set("json spaces",2)
-app.use(cors())
-app.use(secure)
-app.use(express.static("public"))
-
-app.use('/', mainrouter)
-app.use('/api', apirouter)
-
+// Jalankan server pada port tertentu
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(color("Server running on port " + PORT,'green'))
-})
-
-module.exports = app
+  console.log(`Server berjalan di port ${PORT}`);
+});
